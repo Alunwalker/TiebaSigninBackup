@@ -40,7 +40,7 @@ jobs:
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: TieBa Report
         body: file://TiebaSignIn.txt
-        to: steel_walker98@outlook.com
+        to: steelwalker98@outlook.com
         from: GitHub Actions
         content_type: text/plain
 
