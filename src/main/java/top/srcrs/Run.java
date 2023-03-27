@@ -113,7 +113,7 @@ public class Run {
      */
     public void runSign() {
         // 当执行 5 轮，所有贴吧还未签到成功就结束操作
-        Integer flag = 1;
+        Integer flag = 5;
         try {
             while (success.size() < followNum && flag > 0) {
                 logMessageString += getLogMessage(String.format("-----第 %d 轮签到开始-----", 5 - flag + 1));
@@ -135,7 +135,7 @@ public class Run {
                 }
                 if (success.size() != followNum) {
                     // 为防止短时间内多次请求接口，触发风控，设置每一轮签到完等待 5 分钟
-                    // Thread.sleep(1000 * 60 * 5);
+                    Thread.sleep(1000 * 60 * 5);
                     /**
                      * 重新获取 tbs
                      * 尝试解决以前第 1 次签到失败，剩余 4 次循环都会失败的错误。
