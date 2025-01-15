@@ -42,9 +42,7 @@ jobs:
         env:
           BDUSS: ${{ secrets.BDUSS }}  # 从 GitHub Secrets 中获取 BDUSS 环境变量
         run: |
-          mvn compile exec:java \
-          -Dexec.mainClass="top.srcrs.Run" \  # 指定 Java 主类
-          -Dexec.args="${BDUSS}"            # 传递 BDUSS 参数
+          mvn compile exec:java -Dexec.mainClass="top.srcrs.Run" -Dexec.args="${BDUSS}"            # 传递 BDUSS 参数
 
       # 步骤5：发送邮件
       - name: 'Send mail'
