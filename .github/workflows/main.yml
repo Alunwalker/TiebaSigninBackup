@@ -20,7 +20,7 @@ jobs:
     # 任务步骤
     steps:
       # 步骤1：检出代码
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # 步骤2：设置 JDK 1.8 环境
       - name: Set up JDK 1.8
