@@ -20,7 +20,7 @@ jobs:
     # 任务步骤
     steps:
       # 步骤1：检出代码
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       # 步骤2：设置 JDK 1.8 环境
       - name: Set up JDK 1.8
@@ -30,7 +30,7 @@ jobs:
 
       # 步骤3：缓存 Maven 的本地依赖
       - name: Cache local Maven repository
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.m2/repository  # 指定缓存的目录
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # 缓存的唯一标识
